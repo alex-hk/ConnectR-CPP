@@ -4,7 +4,7 @@
 
 struct Game{
 private:
-	int width, height;
+	int width, height, connect;
 	Board* gameboard;
 
 public:
