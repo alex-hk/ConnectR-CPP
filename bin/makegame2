@@ -1,0 +1,6 @@
+CC=g++
+CFLAGS=-g
+DEPS = Agent.h
+
+makegame: Agent.cpp Board.cpp Handler.cpp Node.cpp
+	$(CC) -o makegame 

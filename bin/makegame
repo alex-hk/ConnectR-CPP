@@ -1,6 +1,10 @@
 CC=g++
 CFLAGS=-g
 DEPS = Agent.h
-OBJ = game.o
+OBJ = Game.o Agent.o
 
-game.o: %.c
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+gamemake: $(OBJ)
+	g++ -o $@ $^ $(CFLAGS)

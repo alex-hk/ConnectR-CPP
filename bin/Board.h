@@ -14,11 +14,15 @@ public:
 		board = vector<vector<int>>(height, vector<int>(width));
 	}
 
-	public int getValue(int row, int col){
+	~Board(){
+		board.erase(board.begin(), board.end());
+	}
+
+	int getValue(int row, int col){
 		return board[row][col];
 	}
 
-	public int setValue(int row, int col, int value){
+	int setValue(int row, int col, int value){
 		board[row][col] = value;
 	}
 
@@ -26,11 +30,13 @@ public:
 		if(this == &bc){
 			return *this;
 		}
-		this.width = bc.width;
-		this.height = bc.height;
-		this.board = bc.board;
+		this->width = bc.width;
+		this->height = bc.height;
+		this->board = bc.board;
+
+		return *this;
 	}
-}
+};
 
 
 
