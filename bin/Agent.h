@@ -5,6 +5,4 @@ private:
 	Tree* tree;
 
 public:
-	int miniMax();
-	int heuristic();	
 };

@@ -3,7 +3,7 @@
 
 struct Node {
 private:
-	float weight;
+	float score;
 	int move;
 	Board board;
 	
@@ -16,6 +16,14 @@ public:
 	~Node(){
 		delete board;
 		vector<Node*>().swap(children);	
+	}
+
+	int heuristic();
+
+	float getScore(){ return score; }
+
+	bool isLeaf(){
+		return children.size() == 0;
 	}
 
 	void addChild(Node *n){
